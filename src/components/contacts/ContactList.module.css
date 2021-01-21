@@ -1,0 +1,9 @@
+.list {
+  width: 250px;
+  padding: 10px;
+  margin-right: auto;
+  margin-left: auto;
+
+  background-color: aquamarine;
+  list-style: none;
+}

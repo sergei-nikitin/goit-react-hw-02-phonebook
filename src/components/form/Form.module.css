@@ -1,0 +1,15 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+
+  width: 250px;
+  background-color: aquamarine;
+}
+.label,
+.input {
+  margin-bottom: 10px;
+}
