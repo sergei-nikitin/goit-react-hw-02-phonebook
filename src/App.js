@@ -8,8 +8,8 @@ class App extends Component {
   state = {
     contacts: [],
     filter: "",
-    name: "",
-    number: "",
+    // name: "",
+    // number: "",
   };
 
   changefilter = (filter) => {
@@ -23,6 +23,15 @@ class App extends Component {
     );
   };
 
+  includContact = (name) => {
+    const { contacts } = this.state;
+    contacts.forEach((contact) => {
+      if (contact.name === name) {
+        return window.alert(`${name} is already in contacts.`);
+      }
+    });
+  };
+
   addContact = (name, number) => {
     const user = {
       id: shortid.generate(),
@@ -33,32 +42,46 @@ class App extends Component {
     user.name = name;
     user.number = number;
     this.setState((prevstate) => {
+      this.includContact(name);
       return {
         contacts: [...prevstate.contacts, user],
       };
     });
   };
 
+  deleteContact = (name) => {
+    this.setState((prevState) => ({
+      contacts: prevState.contacts.filter((contact) => contact.name !== name),
+    }));
+  };
+
   changeFilter = (filter) => {
     this.setState({ filter });
-    // console.log(filter.target.value);
   };
 
   render() {
     const visibleContact = this.getFilterContacts();
     return (
       <div>
-        <h2>Phonebook</h2>
         <Form onAddContact={this.addContact} />
-        <h2>Contacts</h2>
 
-        {this.state.contacts.length > 0 ? (
+        {visibleContact.length > 1 ? (
           <div>
             <Filter
               value={this.state.filter}
               onChangeFilter={this.changeFilter}
             />
-            <ContactList contacts={visibleContact} />
+          </div>
+        ) : (
+          <div></div>
+        )}
+
+        {this.state.contacts.length > 0 ? (
+          <div>
+            <ContactList
+              contacts={visibleContact}
+              onDeleteContact={this.deleteContact}
+            />
           </div>
         ) : (
           <div></div>

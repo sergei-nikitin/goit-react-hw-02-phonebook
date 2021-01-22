@@ -7,3 +7,18 @@
   background-color: aquamarine;
   list-style: none;
 }
+
+.title {
+  text-align: center;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.deleteBtn {
+  /* margin-left: auto; */
+}

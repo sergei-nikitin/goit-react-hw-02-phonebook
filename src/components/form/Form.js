@@ -27,39 +27,48 @@ class Form extends Component {
 
   render() {
     return (
-      <form className={styles.form} onSubmit={this.handleSubmit}>
-        <label className={styles.label} htmlFor={this.inputNameId} name="name">
-          Name
-        </label>
-        <input
-          className={styles.input}
-          id={this.inputNameId}
-          type="text"
-          value={this.state.name}
-          name="name"
-          placeholder="Enter Name"
-          onChange={this.handleCenge}
-        ></input>
+      <div>
+        <h2 className={styles.title}>Phonebook</h2>
+        <form className={styles.form} onSubmit={this.handleSubmit}>
+          <label
+            className={styles.label}
+            htmlFor={this.inputNameId}
+            name="name"
+          >
+            Name
+          </label>
+          <input
+            className={styles.input}
+            id={this.inputNameId}
+            type="text"
+            value={this.state.name}
+            name="name"
+            placeholder="Enter Name"
+            onChange={this.handleCenge}
+          ></input>
 
-        <label
-          className={styles.label}
-          htmlFor={this.inputNumberId}
-          name="number"
-        >
-          Number
-        </label>
-        <input
-          className={styles.input}
-          id={this.inputNumberId}
-          type="phone"
-          value={this.state.number}
-          name="number"
-          placeholder="Enter Number"
-          onChange={this.handleCenge}
-        ></input>
+          <label
+            className={styles.label}
+            htmlFor={this.inputNumberId}
+            name="number"
+          >
+            Number
+          </label>
+          <input
+            className={styles.input}
+            id={this.inputNumberId}
+            type="phone"
+            value={this.state.number}
+            name="number"
+            placeholder="Enter Number"
+            onChange={this.handleCenge}
+          ></input>
 
-        <button type="submit">Add contact</button>
-      </form>
+          <button className={styles.addBtn} type="submit">
+            Add contact
+          </button>
+        </form>
+      </div>
     );
   }
 }

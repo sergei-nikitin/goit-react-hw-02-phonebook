@@ -1,15 +1,23 @@
+.title {
+  text-align: center;
+}
+
 .form {
   display: flex;
   flex-direction: column;
-
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-
   width: 250px;
+  padding: 10px;
+  margin-right: auto;
+  margin-left: auto;
+
   background-color: aquamarine;
 }
+
 .label,
 .input {
   margin-bottom: 10px;
+}
+
+.addBtn {
+  margin-top: 5px;
 }

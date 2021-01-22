@@ -6,11 +6,11 @@ const Filter = ({ value, onChangeFilter }) => {
     <div>
       <input
         className={styles.input}
+        placeholder="Filter"
         name="filter"
         type="text"
         value={value}
         onChange={(event) => onChangeFilter(event.target.value)}
-        // onChange={onChengeFilter}
       />
     </div>
   );
