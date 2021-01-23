@@ -8,8 +8,6 @@ class App extends Component {
   state = {
     contacts: [],
     filter: "",
-    // name: "",
-    // number: "",
   };
 
   changefilter = (filter) => {
@@ -40,7 +38,7 @@ class App extends Component {
     };
 
     user.name = name;
-    user.number = number;
+    user.number = Number(number);
     this.setState((prevstate) => {
       this.includContact(name);
       return {

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import styles from "./Form.module.css";
 import shortid from "shortid";
 
@@ -72,5 +73,10 @@ class Form extends Component {
     );
   }
 }
+
+Form.propTypes = {
+  name: PropTypes.string,
+  number: PropTypes.number,
+};
 
 export default Form;
